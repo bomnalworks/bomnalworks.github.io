@@ -3,3 +3,4 @@ node_modules/
 .vitepress/cache/
 first-push.cmd
 deploy-workflow.yml
+push-site.cmd
