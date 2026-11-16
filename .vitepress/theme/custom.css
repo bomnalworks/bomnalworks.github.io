@@ -1,0 +1,72 @@
+/* 따뜻한 종이색 바탕에 흙색 포인트. 포인트 색은 링크와 버튼에만 쓴다. */
+:root {
+  --vp-c-brand-1: #a34e33;
+  --vp-c-brand-2: #b5573a;
+  --vp-c-brand-3: #c46a4a;
+  --vp-c-brand-soft: rgba(181, 87, 58, 0.12);
+  --vp-c-bg: #faf8f4;
+  --vp-c-bg-alt: #f3efe8;
+  --vp-c-bg-soft: #f3efe8;
+  --vp-c-bg-elv: #fffdf9;
+  --vp-c-text-1: #2b2622;
+  --vp-c-text-2: #5e564e;
+  --vp-c-divider: #e6dfd4;
+  --vp-c-gutter: #e6dfd4;
+  --vp-home-hero-name-color: #a34e33;
+  --vp-button-brand-bg: #b5573a;
+  --vp-button-brand-hover-bg: #a34e33;
+  --vp-button-brand-active-bg: #8f432b;
+  --vp-font-family-base: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo',
+    'Malgun Gothic', 'Noto Sans KR', sans-serif;
+}
+.dark {
+  --vp-c-brand-1: #e0906f;
+  --vp-c-brand-2: #d37c5a;
+  --vp-c-brand-3: #c46a4a;
+  --vp-c-brand-soft: rgba(224, 144, 111, 0.14);
+  --vp-c-bg: #1f1c19;
+  --vp-c-bg-alt: #191714;
+  --vp-c-bg-soft: #282420;
+  --vp-c-bg-elv: #282420;
+  --vp-c-text-1: #ece6dd;
+  --vp-c-text-2: #b3aa9e;
+  --vp-c-divider: #38322c;
+  --vp-c-gutter: #38322c;
+  --vp-home-hero-name-color: #e0906f;
+}
+
+.vp-doc { word-break: keep-all; line-height: 1.8; }
+.vp-doc img { border: 1px solid var(--vp-c-divider); border-radius: 8px; }
+.vp-doc figcaption, .vp-doc .cap { display: block; margin-top: 6px; font-size: 0.875rem; color: var(--vp-c-text-2); }
+.VPFooter .message { word-break: keep-all; }
+
+.home-section { max-width: 1152px; margin: 0 auto; padding: 48px 24px 0; }
+.home-section h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; border: 0; padding: 0; }
+.home-section p.lead { color: var(--vp-c-text-2); margin: 0 0 20px; }
+.home-steps { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); padding: 0; margin: 0; list-style: none; counter-reset: step; }
+.home-steps li { counter-increment: step; background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider); border-radius: 12px; padding: 20px; }
+.home-steps li::before { content: counter(step); display: inline-block; width: 28px; height: 28px; line-height: 28px; text-align: center; border-radius: 50%; background: var(--vp-c-brand-soft); color: var(--vp-c-brand-1); font-weight: 700; margin-bottom: 10px; }
+.home-steps strong { display: block; margin-bottom: 4px; }
+.home-steps span { color: var(--vp-c-text-2); font-size: 0.95rem; }
+.home-contact { background: var(--vp-c-bg-soft); border: 1px solid var(--vp-c-divider); border-radius: 12px; padding: 24px; }
+.home-contact a { font-weight: 600; }
+
+.post-list { list-style: none; padding: 0; margin: 0; }
+.post-list li { border-top: 1px solid var(--vp-c-divider); margin: 0; }
+.post-list li:last-child { border-bottom: 1px solid var(--vp-c-divider); }
+.post-list a { display: block; padding: 18px 4px; text-decoration: none; color: inherit; }
+.post-list a:hover .post-title { color: var(--vp-c-brand-1); }
+.post-meta { display: block; font-size: 0.85rem; color: var(--vp-c-text-2); }
+.post-title { display: block; font-size: 1.1rem; margin: 2px 0; transition: color 0.2s; }
+.post-summary { display: block; color: var(--vp-c-text-2); font-size: 0.95rem; }
+.post-empty { padding: 18px 4px; color: var(--vp-c-text-2); }
+
+/* 광고 자리: 값이 없으면 아예 그려지지 않는다. 있을 때도 본문과 분명히 떨어뜨리고 작게 표시한다. */
+.ad-slot { margin: 48px 0 0; padding-top: 16px; border-top: 1px solid var(--vp-c-divider); }
+.ad-label { display: block; font-size: 0.75rem; color: var(--vp-c-text-2); margin-bottom: 6px; }
+
+/* 홈 화면 줄바꿈과 목록 표시 정리 */
+.VPHero .name, .VPHero .text, .VPHero .tagline, .VPFeature .details { word-break: keep-all; }
+.vp-doc ol.home-steps, .vp-doc ul.post-list { list-style: none; padding-left: 0; margin: 0; }
+.vp-doc ol.home-steps li, .vp-doc ul.post-list li { margin-top: 0; }
+.home-section .vp-doc h2, .home-section h2 { border-top: 0; margin-top: 0; padding-top: 0; }
