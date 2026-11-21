@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://bomnalworks.com/sitemap.xml
+
+#DaumWebMasterTool:bb843f4c1fcbf0bdcb00e59620168dc51a9a57d08bfaa0ca667cf2baa57d4935:9OXzxfMP1b1VGCOsL/bJCQ==
