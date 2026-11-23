@@ -48,7 +48,7 @@ export default defineConfig({
       { text: '문의', link: '/#contact' },
       {
         text: '패밀리 사이트',
-        items: [{ text: '봄날 운세 오락실 - 토정비결·추억의 게임', link: PLAY_URL }]
+        items: [{ text: '봄날 운세 오락실 - 추억의 게임·토정비결', link: PLAY_URL }]
       }
     ],
     outline: { label: '이 글의 순서', level: [2, 3] },
