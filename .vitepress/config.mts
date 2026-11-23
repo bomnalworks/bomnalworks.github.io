@@ -17,6 +17,8 @@ const scheduled = readdirSync(blogDir)
   })
   .map((f) => `blog/${f}`)
 
+const PLAY_URL = 'https://play.bomnalworks.com/'   // 패밀리 사이트 (메뉴와 푸터)
+
 // 애드센스 승인을 받으면 아래 두 값을 채운다. 비어 있으면 광고 자리는 화면에 아무것도 그리지 않는다.
 const ADSENSE_CLIENT = ''   // 예: 'ca-pub-0000000000000000'
 const ADSENSE_SLOT = ''     // 글 하단 광고 단위 ID
@@ -43,7 +45,11 @@ export default defineConfig({
     nav: [
       { text: '하는 일', link: '/#what' },
       { text: '블로그', link: '/blog/' },
-      { text: '문의', link: '/#contact' }
+      { text: '문의', link: '/#contact' },
+      {
+        text: '패밀리 사이트',
+        items: [{ text: '봄날 운세 오락실 - 토정비결·추억의 게임', link: PLAY_URL }]
+      }
     ],
     outline: { label: '이 글의 순서', level: [2, 3] },
     docFooter: { prev: '이전 글', next: '다음 글' },
@@ -51,7 +57,7 @@ export default defineConfig({
     returnToTopLabel: '맨 위로',
     sidebarMenuLabel: '메뉴',
     footer: {
-      message: '봄날의곰 (Bomnal Works) · 사업자등록번호 264-01-02496 · contact@bomnalworks.com',
+      message: `봄날의곰 (Bomnal Works) · 사업자등록번호 264-01-02496 · contact@bomnalworks.com<br>패밀리 사이트 · <a href="${PLAY_URL}">봄날 운세 오락실</a>`,
       copyright: '© 2026 Bomnal Works'
     },
     // 테마 컴포넌트가 읽는 값

@@ -54,7 +54,10 @@ features:
 
 메일로 연락해 주세요. 평일 저녁과 주말에 답장드립니다.
 
-<a href="mailto:contact@bomnalworks.com">contact@bomnalworks.com</a>
+<!-- 누르면 제목과 적을 거리가 채워진 채 열린다 - 받는 쪽에서 문의 메일을 알아보기 쉽게. 스팸함 문제의 본 해결은 Gmail 필터("스팸함으로 보내지 않음")다 -->
+<a href="mailto:contact@bomnalworks.com?subject=%5B%EB%B4%84%EB%82%A0%EC%9B%8D%EC%8A%A4%20%EB%AC%B8%EC%9D%98%5D%20&body=%ED%95%98%EC%8B%9C%EB%8A%94%20%EC%9D%BC%28%EC%97%85%EC%A2%85%29%3A%0D%0A%EC%A7%80%EA%B8%88%20%EB%B6%88%ED%8E%B8%ED%95%9C%20%EC%A0%90%3A%0D%0A%EC%9B%90%ED%95%98%EC%8B%9C%EB%8A%94%20%EC%9D%BC%EC%A0%95%3A%0D%0A%EC%97%B0%EB%9D%BD%EB%B0%9B%EC%9D%84%20%EB%B0%A9%EB%B2%95%3A%0D%0A">contact@bomnalworks.com</a>
+
+<p class="contact-tip">메일 앱이 열리지 않으면 위 주소로 직접 보내 주세요. 제목에 <strong>[봄날웍스 문의]</strong>를 붙여 주시면 놓치지 않고 확인합니다.</p>
 
 </div>
 
