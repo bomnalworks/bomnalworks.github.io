@@ -71,3 +71,10 @@
 .vp-doc ol.home-steps li, .vp-doc ul.post-list li { margin-top: 0; }
 .home-section .vp-doc h2, .home-section h2 { border-top: 0; margin-top: 0; padding-top: 0; }
 .home-contact .contact-tip { margin: 12px 0 0; font-size: 0.9rem; color: var(--vp-c-text-2); }
+
+/* 구매 버튼 (전자책 소개 글) */
+.vp-doc .buy-links { display: flex; flex-wrap: wrap; gap: 12px; margin: 20px 0; }
+.vp-doc .buy-links a, .vp-doc .buy-links span { padding: 10px 22px; border-radius: 20px; font-weight: 600; text-decoration: none; }
+.vp-doc .buy-links a { background: var(--vp-button-brand-bg); color: var(--vp-button-brand-text); }
+.vp-doc .buy-links a:hover { background: var(--vp-button-brand-hover-bg); color: var(--vp-button-brand-hover-text); }
+.vp-doc .buy-links span { background: var(--vp-c-default-soft); color: var(--vp-c-text-2); }
