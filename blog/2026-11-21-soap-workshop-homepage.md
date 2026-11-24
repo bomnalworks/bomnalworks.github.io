@@ -78,7 +78,7 @@ series: 홈페이지 월세 탈출
 
 GitHub에 가입한 뒤 오른쪽 위 `+` → "New repository"를 누릅니다.
 
-- 저장소 이름은 **`내아이디.github.io`**로 정확히 씁니다. 그러면 따로 설정하지 않아도 그 주소로 사이트가 열립니다.
+- 저장소 이름은 <strong>`내아이디.github.io`</strong>로 정확히 씁니다. 그러면 따로 설정하지 않아도 그 주소로 사이트가 열립니다.
 - "Add README"를 켜고 만들면, 30초쯤 뒤 그 주소에 README 내용이 벌써 페이지로 보입니다.
 
 ![README만 있어도 주소가 열립니다](/images/2026-11-21/readme-site-live.jpg)
