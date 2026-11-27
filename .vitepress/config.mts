@@ -19,6 +19,11 @@ const scheduled = readdirSync(blogDir)
 
 const PLAY_URL = 'https://play.bomnalworks.com/'   // 패밀리 사이트 (메뉴와 푸터)
 
+// 방문 통계(Google 애널리틱스 4). play.bomnalworks.com 과 같은 측정 ID - 보고서에서 '호스트 이름'으로 두 사이트를 나눠 본다.
+// 쪽을 옮길 때(SPA)의 페이지 조회는 GA4 웹 스트림의 '향상된 측정 - 브라우저 기록 이벤트 기반 페이지 변경'이 센다.
+// 무엇을 모으는지는 /privacy 에 적었다. 바꾸면 그 페이지도 같이 고친다.
+const GA_ID = 'G-VFY32V5YRJ'
+
 // 애드센스 승인을 받으면 아래 두 값을 채운다. 비어 있으면 광고 자리는 화면에 아무것도 그리지 않는다.
 const ADSENSE_CLIENT = ''   // 예: 'ca-pub-0000000000000000'
 const ADSENSE_SLOT = ''     // 글 하단 광고 단위 ID
@@ -43,6 +48,8 @@ export default defineConfig({
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
     ['meta', { property: 'og:site_name', content: '봄날웍스' }],
     ['meta', { property: 'og:locale', content: 'ko_KR' }],
+    ['script', { async: '', src: `https://www.googletagmanager.com/gtag/js?id=${GA_ID}` }],
+    ['script', {}, `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments)} gtag('js', new Date()); gtag('config', '${GA_ID}', { anonymize_ip: true })`],
     ...(ADSENSE_CLIENT
       ? [['script', { async: '', crossorigin: 'anonymous', src: `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}` }] as [string, Record<string, string>]]
       : [])
@@ -63,7 +70,7 @@ export default defineConfig({
     returnToTopLabel: '맨 위로',
     sidebarMenuLabel: '메뉴',
     footer: {
-      message: `작게 만들고, 숫자 그대로 적습니다.<br>봄날의곰 (Bomnal Works) · 사업자등록번호 264-01-02496 · contact@bomnalworks.com<br>놀이 · <a href="${PLAY_URL}">봄날 운세 오락실</a>`,
+      message: `작게 만들고, 숫자 그대로 적습니다.<br>봄날의곰 (Bomnal Works) · 사업자등록번호 264-01-02496 · contact@bomnalworks.com<br>놀이 · <a href="${PLAY_URL}">봄날 운세 오락실</a> · <a href="/privacy">개인정보처리방침</a>`,
       copyright: '© 2026 Bomnal Works'
     },
     // 테마 컴포넌트가 읽는 값
