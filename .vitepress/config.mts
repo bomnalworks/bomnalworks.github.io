@@ -27,13 +27,20 @@ export default defineConfig({
   lang: 'ko-KR',
   title: '봄날웍스',
   titleTemplate: ':title | 봄날웍스',
-  description: '작은 사업체의 업무 시스템과 자동화를 만듭니다. 만드는 과정은 블로그에 그대로 적습니다.',
+  description: '작게 만들고, 숫자 그대로 적습니다. 작은 사업체의 업무 시스템과 0원 홈페이지를 만들고, 그 과정을 전자책과 블로그에 남깁니다.',
   cleanUrls: true,
   lastUpdated: false,
   srcExclude: ['README.md', ...scheduled],
   sitemap: { hostname: 'https://bomnalworks.com' },
   head: [
-    ['meta', { name: 'theme-color', content: '#b5573a' }],
+    // 브랜드 색·로고: bomnal/brand/BRAND.md (로고 원본 brand/logo/, 공유 이미지 brand/src/og.html)
+    ['meta', { name: 'theme-color', content: '#f7f4ed', media: '(prefers-color-scheme: light)' }],
+    ['meta', { name: 'theme-color', content: '#1e1a16', media: '(prefers-color-scheme: dark)' }],
+    ['link', { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }],
+    ['meta', { property: 'og:image', content: 'https://bomnalworks.com/og.png' }],
+    ['meta', { property: 'og:image:width', content: '1200' }],
+    ['meta', { property: 'og:image:height', content: '630' }],
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
     ['meta', { property: 'og:site_name', content: '봄날웍스' }],
     ['meta', { property: 'og:locale', content: 'ko_KR' }],
     ...(ADSENSE_CLIENT
@@ -42,14 +49,13 @@ export default defineConfig({
   ],
   themeConfig: {
     siteTitle: '봄날웍스',
+    logo: { light: '/logo/symbol.svg', dark: '/logo/symbol-ivory.svg', alt: '' },
+    // 손 · 책 · 놀이 (BRAND.md 1장 브랜드 구조) + 블로그(기록)
     nav: [
-      { text: '하는 일', link: '/#what' },
-      { text: '블로그', link: '/blog/' },
-      { text: '문의', link: '/#contact' },
-      {
-        text: '패밀리 사이트',
-        items: [{ text: '봄날 운세 오락실 - 추억의 게임·토정비결', link: PLAY_URL }]
-      }
+      { text: '손', link: '/work', activeMatch: '^/work' },
+      { text: '책', link: '/books', activeMatch: '^/books' },
+      { text: '놀이', link: PLAY_URL },
+      { text: '기록', link: '/blog/', activeMatch: '^/blog/' }
     ],
     outline: { label: '이 글의 순서', level: [2, 3] },
     docFooter: { prev: '이전 글', next: '다음 글' },
@@ -57,7 +63,7 @@ export default defineConfig({
     returnToTopLabel: '맨 위로',
     sidebarMenuLabel: '메뉴',
     footer: {
-      message: `봄날의곰 (Bomnal Works) · 사업자등록번호 264-01-02496 · contact@bomnalworks.com<br>패밀리 사이트 · <a href="${PLAY_URL}">봄날 운세 오락실</a>`,
+      message: `작게 만들고, 숫자 그대로 적습니다.<br>봄날의곰 (Bomnal Works) · 사업자등록번호 264-01-02496 · contact@bomnalworks.com<br>놀이 · <a href="${PLAY_URL}">봄날 운세 오락실</a>`,
       copyright: '© 2026 Bomnal Works'
     },
     // 테마 컴포넌트가 읽는 값
